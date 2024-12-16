@@ -97,4 +97,37 @@ export default StyleSheet.create({
       },
 });
 
- 
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: '#fff',
+//   },
+//   title: {
+//     fontSize: 24,
+//     fontWeight: 'bold',
+//     marginBottom: 20,
+//   },
+//   board: {
+//     width: 300,
+//     height: 300,
+//     flexDirection: 'row',
+//     flexWrap: 'wrap',
+//   },
+//   row: {
+//     flexDirection: 'row',
+//   },
+//   square: {
+//     width: 100,
+//     height: 100,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     borderWidth: 1,
+//     borderColor: '#ccc',
+//   },
+//   image: {
+//     width: 80,
+//     height: 80,
+//   },
+// });

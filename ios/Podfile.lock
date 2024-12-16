@@ -1,4 +1,11 @@
 PODS:
+  - AmplifyRTNCore (1.1.6):
+    - RCT-Folly
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
+    - React-Core
+    - ReactCommon/turbomodule/core
   - boost (1.84.0)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.76.5)
@@ -43,6 +50,7 @@ PODS:
     - React-RCTText (= 0.76.5)
     - React-RCTVibration (= 0.76.5)
   - React-callinvoker (0.76.5)
+  - React-Codegen (0.1.0)
   - React-Core (0.76.5):
     - glog
     - hermes-engine
@@ -1244,6 +1252,8 @@ PODS:
     - Yoga
   - react-native-get-random-values (1.11.0):
     - React-Core
+  - react-native-netinfo (11.4.1):
+    - React-Core
   - react-native-safe-area-context (5.0.0):
     - DoubleConversion
     - glog
@@ -1577,6 +1587,27 @@ PODS:
     - React-logger (= 0.76.5)
     - React-perflogger (= 0.76.5)
     - React-utils (= 0.76.5)
+  - RNCAsyncStorage (2.1.0):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - RNGestureHandler (2.21.2):
     - DoubleConversion
     - glog
@@ -1755,6 +1786,7 @@ PODS:
   - Yoga (0.0.0)
 
 DEPENDENCIES:
+  - "AmplifyRTNCore (from `../node_modules/@aws-amplify/react-native`)"
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
@@ -1793,6 +1825,7 @@ DEPENDENCIES:
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
   - react-native-get-random-values (from `../node_modules/react-native-get-random-values`)
+  - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -1821,6 +1854,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -1829,9 +1863,12 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - React-Codegen
     - SocketRocket
 
 EXTERNAL SOURCES:
+  AmplifyRTNCore:
+    :path: "../node_modules/@aws-amplify/react-native"
   boost:
     :podspec: "../node_modules/react-native/third-party-podspecs/boost.podspec"
   DoubleConversion:
@@ -1905,6 +1942,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
   react-native-get-random-values:
     :path: "../node_modules/react-native-get-random-values"
+  react-native-netinfo:
+    :path: "../node_modules/@react-native-community/netinfo"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-nativeconfig:
@@ -1961,6 +2000,8 @@ EXTERNAL SOURCES:
     :path: build/generated/ios
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNReanimated:
@@ -1973,6 +2014,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  AmplifyRTNCore: 4a338e0325ac32e9f4fd8356d712f6f3aea7532d
   boost: 1dca942403ed9342f98334bf4c3621f011aa7946
   DoubleConversion: f16ae600a246532c4020132d54af21d0ddb2a385
   FBLazyVector: 1bf99bb46c6af9a2712592e707347315f23947aa
@@ -1985,6 +2027,7 @@ SPEC CHECKSUMS:
   RCTTypeSafety: e9a6e7d48184646eb0610295b74c0dd02768cbb2
   React: fffb3cf1b0d7aee03c4eb4952b2d58783615e9fa
   React-callinvoker: 3c6ecc0315d42924e01b3ddc25cf2e49d33da169
+  React-Codegen: 4b8b4817cea7a54b83851d4c1f91f79aa73de30a
   React-Core: d2143ba58d0c8563cf397f96f699c6069eba951c
   React-CoreModules: b3cbc5e3090a8c23116c0c7dd8998e0637e29619
   React-cxxreact: 68fb9193582c4a411ce99d0b23f7b3d8da1c2e4a
@@ -2009,6 +2052,7 @@ SPEC CHECKSUMS:
   React-Mapbuffer: c174e11bdea12dce07df8669d6c0dc97eb0c7706
   React-microtasksnativemodule: 8a80099ad7391f4e13a48b12796d96680f120dc6
   react-native-get-random-values: 21325b2244dfa6b58878f51f9aa42821e7ba3d06
+  react-native-netinfo: f0a9899081c185db1de5bb2fdc1c88c202a059ac
   react-native-safe-area-context: d6406c2adbd41b2e09ab1c386781dc1c81a90919
   React-nativeconfig: f7ab6c152e780b99a8c17448f2d99cf5f69a2311
   React-NativeModulesApple: 70600f7edfc2c2a01e39ab13a20fd59f4c60df0b
@@ -2037,6 +2081,7 @@ SPEC CHECKSUMS:
   React-utils: 541c6cca08f32597d4183f00e83eef2ed20d4c54
   ReactCodegen: daa13d9e48c9bdb1daac4bd694b9dd54e06681df
   ReactCommon: a6b87a7591591f7a52d9c0fec3aa05e0620d5dd3
+  RNCAsyncStorage: fe98f1b459a87b80f12207da80c50b3a3abb6081
   RNGestureHandler: 0e5ae8d72ef4afb855e98dcdbe60f27d938abe13
   RNReanimated: eb3170ded1ec1f61d8129c6cc2df06778f99703f
   RNScreens: 44a3e358d5ccd7815c5ae9148988c562826992b2

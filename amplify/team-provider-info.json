@@ -10,6 +10,14 @@
       "StackName": "amplify-tictactoe-dev-99a3d",
       "StackId": "arn:aws:cloudformation:us-east-1:568299459466:stack/amplify-tictactoe-dev-99a3d/8380fd70-ba55-11ef-b780-1263c9eff61d",
       "AmplifyAppId": "dq6aeal3aja1d"
+    },
+    "categories": {
+      "api": {
+        "tictactoe": {}
+      },
+      "auth": {
+        "tictactoef388c448": {}
+      }
     }
   }
 }

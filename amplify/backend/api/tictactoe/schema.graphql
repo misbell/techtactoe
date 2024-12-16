@@ -3,18 +3,18 @@
 input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
 
 type Player @model {
-  id: ID! # Unique Player ID
+  id: ID!
   name: String!
-  totalWins: Int! @default(value: "0")
+  totalWins: Int! # No @default
 }
 
 type Game @model {
-  id: ID! # Unique Game ID
-  player1: Player!
-  player2: Player!
-  board: [String!]! @default(value: ["", "", "", "", "", "", "", "", ""])
+  id: ID!
+  player1: ID! # Reference to the player's ID
+  player2: ID! # Reference to the player's ID
+  board: [String!]!
   currentPlayer: String!
-  winner: Player
+  winner: ID
 }
 
 type MatchmakingQueue @model {

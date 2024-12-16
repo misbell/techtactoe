@@ -1,0 +1,4 @@
+## Set default value for board ##
+#if(!$ctx.args.input.board)
+    $util.qr($ctx.args.input.put("board", ["", "", "", "", "", "", "", "", ""]))
+#end
