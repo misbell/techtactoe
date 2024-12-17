@@ -8,6 +8,8 @@ type Player @model {
   totalWins: Int! # No @default
 }
 
+ 
+
 type Game @model {
   id: ID!
   player1: ID! # Reference to the player's ID

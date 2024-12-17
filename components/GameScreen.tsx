@@ -3,6 +3,7 @@ import { View, Text, Pressable, Image, Alert, StyleSheet } from 'react-native';
 import { generateClient } from 'aws-amplify/api';
 import { updatePlayer, updateGame, createGame  } from '../src/graphql/mutations';
 import { getPlayer } from '../src/graphql/queries';
+import { listPlayers } from '../src/graphql/queries';
 
 
 const client = generateClient();
@@ -23,27 +24,62 @@ const GameScreen = ({ route, navigation }: any) => {
   const [game, setGame] = useState<any>(null); // Game object state
   const [board, setBoard] = useState(Array(9).fill(null));
   const [currentPlayer, setCurrentPlayer] = useState('Trump');
-
+  
   useEffect(() => {
     async function startGame() {
       try {
+        // Step 1: Fetch the list of players
+        const playersResponse = await client.graphql({
+          query: listPlayers,
+        });
+  
+        const players = playersResponse.data.listPlayers.items;
+  
+        if (players.length < 2) {
+          console.error("Not enough players to start a game.");
+          return;
+        }
+  
+        // Step 2: Select the first two players
+        const player1Id = players[0].id; // Example: First player
+        const player2Id = players[1].id; // Example: Second player
+  
+        console.log(`Player 1: ${player1Id}, Player 2: ${player2Id}`);
+  
+        // Step 3: Start the game with the real player IDs
         const response = await client.graphql({
           query: createGame,
           variables: {
             input: {
-              player1: 'valid-player1-id', // Replace with actual player1 ID
-              player2: 'valid-player2-id', // Replace with actual player2 ID
-              board: Array(9).fill(""), // Valid array of empty strings
-              currentPlayer: "Trump",    // Valid string
+              player1: player1Id,
+              player2: player2Id,
+              board: Array(9).fill(""), // Initialize board with empty strings
+              currentPlayer: "Trump",
             },
           },
         });
-        setGame(response.data.createGame); // Set the game object in state
-        console.log('Game started:', response.data.createGame);
+
+        if (response.data && response.data.createGame) {
+          const game = response.data.createGame;
+          console.log("Game started:", game);
+          console.log("Player 1 ID:", game.player1);
+        } else {
+          console.error("Game creation failed or returned null.");
+        }
+  
+        setGame(response.data.createGame);
+        if (response.data && response.data.createGame) {
+          const game = response.data.createGame;
+          console.log("Game started:", game);
+          console.log("Player 1 ID:", game.player1);
+        } else {
+          console.error("Game creation failed or returned null.");
+        }
       } catch (error) {
-        console.error('Error starting game:', JSON.stringify(error, null, 2));
+        console.error("Error starting game:", JSON.stringify(error, null, 2));
       }
     }
+  
     startGame();
   }, []);
 
@@ -110,30 +146,36 @@ const GameScreen = ({ route, navigation }: any) => {
   const updateWinner = async (winner: string) => {
     try {
       // Determine winner ID (player1 or player2)
-      const winnerId = winner === 'Trump' ? game.player1.id : game.player2.id;
-  
+      // const winnerId = winner === 'Trump' ? game.player1.id : game.player2.id;
+
+      // console.log("Updating winner with ID:", winner);
+      // console.log("game is ", game);
+      // console.log("winner", winner );
+      // console.log("player1 for game is ", game.player1.id );
+      // console.log("player2 for game is ", game.player2.id );
+
       // Step 1: Query the current totalWins for the winner
-      const playerResponse = await client.graphql({
-        query: getPlayer, // GraphQL query to get the player's current stats
-        variables: { id: winnerId },
-      });
+      // const playerResponse = await client.graphql({
+      //   query: getPlayer, // GraphQL query to get the player's current stats
+      //   variables: { id: winnerId },
+      // });
   
-      const currentWins = playerResponse.data.getPlayer.totalWins;
+      // const currentWins = playerResponse.data.getPlayer.totalWins;
   
-      // Step 2: Update the player's totalWins
-      const newWins = currentWins + 1;
+      // // Step 2: Update the player's totalWins
+      // const newWins = currentWins + 1;
   
-      await client.graphql({
-        query: updatePlayer,
-        variables: {
-          input: {
-            id: winnerId,
-            totalWins: newWins, // Explicitly provide the new value
-          },
-        },
-      });
+      // await client.graphql({
+      //   query: updatePlayer,
+      //   variables: {
+      //     input: {
+      //       id: winnerId,
+      //       totalWins: newWins, // Explicitly provide the new value
+      //     },
+      //   },
+      // });
   
-      console.log('Leaderboard updated successfully!');
+      // console.log('Leaderboard updated successfully!');
       navigation.navigate('Leaderboard'); // Navigate to the leaderboard screen
     } catch (error) {
       console.error('Error updating leaderboard:', error);
@@ -141,11 +183,11 @@ const GameScreen = ({ route, navigation }: any) => {
   };
 
   const renderSquare = (index: number) => (
-    <Pressable style={styles.square} onPress={() => handlePress(index)}>
+    <Pressable key={index} style={styles.square} onPress={() => handlePress(index)}>
       {board[index] && (
         <Image
           source={board[index] === 'Trump' ? trumpImage : opponentImages[opponent]}
-          style={styles.image}
+          style={styles.roundImage}
         />
       )}
     </Pressable>
@@ -176,6 +218,13 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row' },
   square: { width: 100, height: 100, justifyContent: 'center', alignItems: 'center', borderWidth: 1 },
   image: { width: 80, height: 80 },
+  roundImage: {
+    width: 100, // Equal width
+    height: 100, // Equal height
+    borderRadius: 50, // Half of width/height to make it round
+    borderWidth: 2, // Optional: Add border for styling
+    borderColor: '#ddd', // Optional: Border color
+  },
 });
 
 export default GameScreen;
