@@ -5,7 +5,8 @@ import { listLeaderboards } from '../src/graphql/queries';
 
 const client = generateClient();
 
-const LeaderboardScreen = () => {
+
+const LeaderboardScreen = ({ route, navigation }: any) => {
   const [leaderboard, setLeaderboard] = useState([]);
 
   useEffect(() => {

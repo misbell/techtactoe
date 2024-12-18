@@ -21,6 +21,8 @@ const opponentImages: any = {
 
 const GameScreen = ({ route, navigation }: any) => {
   const { opponent } = route.params;
+  const { user } = route.params;
+  
   const [game, setGame] = useState<any>(null); // Game object state
   const [board, setBoard] = useState(Array(9).fill(null));
   const [currentPlayer, setCurrentPlayer] = useState('Trump');

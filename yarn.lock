@@ -56,9 +56,9 @@
     "@aws-amplify/api-rest" "4.0.63"
     tslib "^2.5.0"
 
-"@aws-amplify/auth@6.8.3":
+"@aws-amplify/auth@6.8.3", "@aws-amplify/auth@^6.8.3":
   version "6.8.3"
-  resolved "https://registry.npmjs.org/@aws-amplify/auth/-/auth-6.8.3.tgz"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/auth/-/auth-6.8.3.tgz#f07036a1129d8ec689bb53fd0c307c0303489806"
   integrity sha512-JJHIy4am1t5rsj5SJJmXHEkLEriHeX/D/jgqX4dx54/r+hPUca1ZDep1xkNnJ2sIEkO+zMUMNxz2ynfhJRpM9g==
   dependencies:
     tslib "^2.5.0"
@@ -4113,7 +4113,7 @@ available-typed-arrays@^1.0.7:
 
 aws-amplify@^6.10.3:
   version "6.10.3"
-  resolved "https://registry.npmjs.org/aws-amplify/-/aws-amplify-6.10.3.tgz"
+  resolved "https://registry.yarnpkg.com/aws-amplify/-/aws-amplify-6.10.3.tgz#edec7a3593990a62cd2bd46a641b578833879cfa"
   integrity sha512-HJHKZsZK4e+EM6JU3N4jEsQN8Bwfks4FcONq3wnoc0X1KY/1LipslZ01Z9knR3F1EJEmM9wM8lrBhNyzYSg7Sw==
   dependencies:
     "@aws-amplify/analytics" "7.0.63"

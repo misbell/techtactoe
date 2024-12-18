@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 
-const OpponentPickerScreen = ({ navigation }: any) => {
+const OpponentPickerScreen = ({ route, navigation }: any) => {
+  const { user } = route.params;
   const selectOpponent = (opponent: string) => {
     navigation.navigate('Game', { opponent });
   };
