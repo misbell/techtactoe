@@ -7,9 +7,7 @@ type Player @model {
   name: String!
   totalWins: Int! # No @default
 }
-
  
-
 type Game @model {
   id: ID!
   player1: ID! # Reference to the player's ID

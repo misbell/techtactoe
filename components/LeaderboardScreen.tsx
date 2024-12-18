@@ -7,6 +7,8 @@ const client = generateClient();
 
 
 const LeaderboardScreen = ({ route, navigation }: any) => {
+  const { user } = route.params;
+  
   const [leaderboard, setLeaderboard] = useState([]);
 
   useEffect(() => {

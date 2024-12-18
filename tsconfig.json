@@ -2,6 +2,7 @@
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
     "module": "esnext",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": ["jest"],
   },
 }
