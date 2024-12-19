@@ -33,15 +33,32 @@ import '@testing-library/jest-native/extend-expect'; // Extends Jest for React N
 
 // Mock UUID
 jest.mock('uuid', () => ({
-  v4: jest.fn(() => 'mock-uuid'),
+    v4: jest.fn(() => 'mock-uuid'),
 }));
 
 // Mock AWS Amplify Auth
 jest.mock('aws-amplify/auth', () => ({
-  resetPassword: jest.fn(),
-  confirmResetPassword: jest.fn(),
-  signIn: jest.fn(),
-  signUp: jest.fn(),
-  resendSignUpCode: jest.fn(),
-  confirmSignUp: jest.fn(),
+    getCurrentUser: jest.fn(),
+    signOut: jest.fn(),
+    resetPassword: jest.fn(),
+    confirmResetPassword: jest.fn(),
+    signIn: jest.fn(),
+    signUp: jest.fn(),
+    resendSignUpCode: jest.fn(),
+    confirmSignUp: jest.fn(),
 }));
+
+jest.mock('@react-navigation/native', () => ({
+    NavigationContainer: ({ children }) => children,
+}));
+
+jest.mock('@react-navigation/stack', () => {
+    const actualStack = jest.requireActual('@react-navigation/stack');
+    return {
+        ...actualStack,
+        createStackNavigator: jest.fn(() => ({
+            Navigator: ({ children }) => children,
+            Screen: ({ children }) => children,
+        })),
+    };
+});
