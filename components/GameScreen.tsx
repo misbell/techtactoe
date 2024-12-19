@@ -4,7 +4,7 @@ import { generateClient } from 'aws-amplify/api';
 import { updatePlayer, updateGame, createGame  } from '../src/graphql/mutations';
 import { getPlayer } from '../src/graphql/queries';
 import { listPlayers } from '../src/graphql/queries';
-
+import { render, fireEvent } from '@testing-library/react-native';
 
 const client = generateClient();
 
