@@ -1,9 +1,12 @@
 {
+  
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "module": "esnext",
+    "module": "esnext", // Use "esnext" for modern React Native
+    "target": "esnext", // Align with React Native requirements
     "esModuleInterop": true,
-    "types": ["jest", "node"],
-    "skipLibCheck": true
+    "types": ["jest", "node", "@testing-library/jest-native"],
+    "skipLibCheck": true, // Avoid dependency type checks
+    "typeRoots": ["./node_modules/@types", "./types"]
   }
 }
