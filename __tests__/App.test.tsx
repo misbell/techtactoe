@@ -1,32 +1,50 @@
 
 import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 import App from '../App';
-import { getCurrentUser, signOut } from 'aws-amplify/auth';
+import { getCurrentUser } from 'aws-amplify/auth';
 
-// Mock AWS Amplify Auth methods
 jest.mock('aws-amplify/auth', () => ({
   getCurrentUser: jest.fn(),
-  signOut: jest.fn(),
 }));
 
-describe('App', () => {
-  test('placeholder test', () => {
-    expect(true).toBe(true);
-  });
+test('shows loading state initially', () => {
+  (getCurrentUser as jest.Mock).mockImplementation(() => new Promise(() => {})); // Mock pending promise
 
-    afterEach(() => {
-    jest.clearAllMocks();
-  });
+  // const { getByTestId } = render(<App />);
 
-  test('shows loading state initially', () => {
-    (getCurrentUser as jest.Mock).mockImplementation(() => new Promise(() => {})); // Mock pending promise
-    //const {getByTestId}  = render(<App />);
-
-    // expect(getByTestId('loading-indicator')).toBeTruthy(); // Assuming ActivityIndicator has a testID
-  });
-
+  // Check if loading indicator is shown
+  // expect(getByTestId('loading-indicator')).toBeTruthy();
 });
+
+// import React from 'react';
+// import { render, fireEvent, waitFor } from '@testing-library/react-native';
+// import App from '../App';
+// import { getCurrentUser, signOut } from 'aws-amplify/auth';
+
+// // Mock AWS Amplify Auth methods
+// jest.mock('aws-amplify/auth', () => ({
+//   getCurrentUser: jest.fn(),
+//   signOut: jest.fn(),
+// }));
+
+// describe('App', () => {
+//   test('placeholder test', () => {
+//     expect(true).toBe(true);
+//   });
+
+//     afterEach(() => {
+//     jest.clearAllMocks();
+//   });
+
+//   test('shows loading state initially', () => {
+//     (getCurrentUser as jest.Mock).mockImplementation(() => new Promise(() => {})); // Mock pending promise
+//     //const {getByTestId}  = render(<App />);
+
+//     // expect(getByTestId('loading-indicator')).toBeTruthy(); // Assuming ActivityIndicator has a testID
+//   });
+
+// });
 
 // describe('App', () => {
 //   afterEach(() => {
