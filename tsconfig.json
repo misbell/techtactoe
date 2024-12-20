@@ -1,12 +1,26 @@
+// {
+//   "extends": "@react-native/typescript-config/tsconfig.json",
+//   "compilerOptions": {
+//     "module": "esnext",
+//     "target": "esnext",
+//     "esModuleInterop": true,
+//     "types": [
+//       "jest",
+//       "node",
+//       "@testing-library/jest-native"
+//     ],
+//     "skipLibCheck": true,
+//     "typeRoots": [
+//       "./node_modules/@types",
+//       "./types"
+//     ]
+//   }
+// }
+
 {
-  
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "module": "esnext", // Use "esnext" for modern React Native
-    "target": "esnext", // Align with React Native requirements
-    "esModuleInterop": true,
-    "types": ["jest", "node", "@testing-library/jest-native"],
-    "skipLibCheck": true, // Avoid dependency type checks
-    "typeRoots": ["./node_modules/@types", "./types"]
-  }
+    "types": ["jest", "@testing-library/jest-native"],
+    "skipLibCheck": true
+}
 }

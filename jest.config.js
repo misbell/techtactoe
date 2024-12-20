@@ -1,3 +1,9 @@
+module.exports = {
+  preset: 'react-native',
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+};
+
+
 // module.exports = {
 //   preset: 'react-native',
 //   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
@@ -56,25 +62,25 @@
 //   },
 // };
 
-module.exports = {
-  preset: 'react-native',
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  transform: {
-    '^.+\\.jsx?$': 'babel-jest',
-    '^.+\\.tsx?$': 'ts-jest',
-    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
-  },
-  transformIgnorePatterns: [
-    'node_modules/(?!(react-native|@react-native|@testing-library/react-native|uuid|@aws-amplify)/)',
-  ],
-  testEnvironment: 'node', // Node.js environment for React Native
-  moduleNameMapper: {
-    '\\.(css|less)$': 'identity-obj-proxy',
-  },
+// module.exports = {
+//   preset: 'react-native',
+//   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+//   transform: {
+//     '^.+\\.jsx?$': 'babel-jest',
+//     '^.+\\.tsx?$': 'ts-jest',
+//     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
+//   },
+//   transformIgnorePatterns: [
+//     'node_modules/(?!(react-native|@react-native|@testing-library/react-native|uuid|@aws-amplify)/)',
+//   ],
+//   testEnvironment: 'node', // Node.js environment for React Native
+//   moduleNameMapper: {
+//     '\\.(css|less)$': 'identity-obj-proxy',
+//   },
   
-  moduleFileExtensions:["js", "json", "jsx", "ts", "tsx", "node"],
-  testFileExtensions: ["js", "json", "jsx", "ts", "tsx", "node"],
-};
+//   moduleFileExtensions:["js", "json", "jsx", "ts", "tsx", "node"],
+//   testFileExtensions: ["js", "json", "jsx", "ts", "tsx", "node"],
+// };
 
 // order matters?
 //['ts', 'tsx', 'js', 'jsx', 'json', 'node'],

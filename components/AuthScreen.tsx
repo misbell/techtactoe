@@ -3,7 +3,6 @@ import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { resetPassword, confirmResetPassword, signIn, signUp, resendSignUpCode, confirmSignUp, resend } from 'aws-amplify/auth';
 import { Alert } from 'react-native';
 
-jest.mock('aws-amplify/auth');
 
 export default function AuthScreen({ onSignIn }) {
   const [username, setUsername] = useState('');
