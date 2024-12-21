@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
-import { resetPassword, confirmResetPassword, signIn, signUp, resendSignUpCode, confirmSignUp, resend } from 'aws-amplify/auth';
+import { resetPassword, confirmResetPassword, signIn, signUp, resendSignUpCode, confirmSignUp, resend } from '@aws-amplify/auth';
 import { Alert } from 'react-native';
 
 

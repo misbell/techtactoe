@@ -3,14 +3,18 @@ import { render } from '@testing-library/react-native';
 import GameScreen from '../components/GameScreen';
 import {View,Text} from 'react-native';
 
-
-test('renders GameScreen correctly', () => {
-  <View> <Text>ok</Text></View>
-  // const { getByText } = render(
-  //   <GameScreen route={{ params: { opponent: 'Xi' } }} navigation={{ navigate: jest.fn() }} />
-  // );
-  // expect(getByText('Game')).toBeTruthy(); // Example assertion
+test('placeholder test', () => {
+  expect(true).toBe(true);
 });
+
+
+// test('renders GameScreen correctly', () => {
+//   <View> <Text>ok</Text></View>
+//   // const { getByText } = render(
+//   //   <GameScreen route={{ params: { opponent: 'Xi' } }} navigation={{ navigate: jest.fn() }} />
+//   // );
+//   // expect(getByText('Game')).toBeTruthy(); // Example assertion
+// });
 
 // import React from 'react';
 // import { render, fireEvent } from '@testing-library/react-native';

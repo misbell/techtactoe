@@ -2,10 +2,10 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react-native';
 import App from '../App';
-import { getCurrentUser, signOut } from 'aws-amplify/auth';
+import { getCurrentUser, signOut } from '@aws-amplify/auth';
 
 // Mock AWS Amplify Auth methods
-jest.mock('aws-amplify/auth', () => ({
+jest.mock('@aws-amplify/auth', () => ({
   getCurrentUser: jest.fn(),
   signOut: jest.fn(),
 }));
