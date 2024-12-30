@@ -18,9 +18,40 @@
 // }
 
 {
-  "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
-    "types": ["jest", "@testing-library/jest-native"],
-    "skipLibCheck": true
-}
+    "target": "esnext",
+    "types": ["react-native", "jest"],
+    "lib": ["esnext"],
+    "moduleResolution": "Bundler",
+    "module": "ES2022",
+    "jsx": "react-native",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+  
+  },
+  // include in checking
+  "include": [
+    "src/**/*",
+    "__tests__/**/*", 
+
+  ],
+  // exclude in production build
+  "exclude": [
+    "node_modules/@react-native/typescript-config/**",
+    "node_modules",
+    "build",
+    "**/*.test.ts", 
+    "**/*.spec.ts", 
+    "__tests__/**/*",
+  ],
+
+// {
+//   "extends": "@react-native/typescript-config/tsconfig.json",
+//   "compilerOptions": {
+//     "types": ["jest", "@testing-library/jest-native"],
+//     "skipLibCheck": true
+// }
 }
