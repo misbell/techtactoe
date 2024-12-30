@@ -1,0 +1,85 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-tictactoe-dev-99a3d-authRole",
+      "UnauthRoleArn": "arn:aws:iam::568299459466:role/amplify-tictactoe-dev-99a3d-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::568299459466:role/amplify-tictactoe-dev-99a3d-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-tictactoe-dev-99a3d-deployment",
+      "UnauthRoleName": "amplify-tictactoe-dev-99a3d-unauthRole",
+      "StackName": "amplify-tictactoe-dev-99a3d",
+      "StackId": "arn:aws:cloudformation:us-east-1:568299459466:stack/amplify-tictactoe-dev-99a3d/8380fd70-ba55-11ef-b780-1263c9eff61d",
+      "AmplifyAppId": "dq6aeal3aja1d"
+    }
+  },
+  "api": {
+    "tictactoe": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "vxmqrsccgfc3tplir3gfbv5bs4",
+        "GraphQLAPIEndpointOutput": "https://v5w3uzdcovcibh6lei4gmbgpr4.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-xb6joqfjlrfs7d6h7gfodztneu"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-tictactoe-dev-99a3d-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apitictactoe"
+      },
+      "lastPushTimeStamp": "2024-12-18T16:21:39.954Z",
+      "lastPushDirHash": "utoss/gaUZ2LIZ6Ce+N0HxJXaAM="
+    }
+  },
+  "auth": {
+    "tictactoef388c448": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-tictactoe-dev-99a3d-deployment/amplify-cfn-templates/auth/tictactoef388c448-cloudformation-template.json",
+        "logicalId": "authtictactoef388c448"
+      },
+      "lastPushTimeStamp": "2024-12-18T16:21:35.591Z",
+      "output": {
+        "UserPoolId": "us-east-1_OzfooLe4P",
+        "AppClientIDWeb": "4052vqlj8t04sgolceniuepd8o",
+        "AppClientID": "4dbt85hrhbcqagreqspjf2jvkn",
+        "IdentityPoolId": "us-east-1:23d7e333-998e-4868-8413-e9fbb03fe41b",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:568299459466:userpool/us-east-1_OzfooLe4P",
+        "IdentityPoolName": "tictactoef388c448_identitypool_f388c448__dev",
+        "UserPoolName": "tictactoef388c448_userpool_f388c448"
+      },
+      "lastPushDirHash": "DWSKF+58SRa4FrhIN18PGkc7GxE="
+    }
+  }
+}
