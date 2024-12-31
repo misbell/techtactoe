@@ -10,14 +10,14 @@ const OpponentPickerScreen = ({ route, navigation }: any) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Pick an Opponent</Text>
-      <Pressable onPress={() => selectOpponent('Xi')}>
-        <Text style={styles.link}>Xi Jinping</Text>
+      <Pressable onPress={() => selectOpponent('Bezos')}>
+        <Text style={styles.link}>Bezos</Text>
       </Pressable>
-      <Pressable onPress={() => selectOpponent('Putin')}>
-        <Text style={styles.link}>Vladimir Putin</Text>
+      <Pressable onPress={() => selectOpponent('Altman')}>
+        <Text style={styles.link}>Altman</Text>
       </Pressable>
-      <Pressable onPress={() => selectOpponent('Kim')}>
-        <Text style={styles.link}>Kim Jong Un</Text>
+      <Pressable onPress={() => selectOpponent('Amodei')}>
+        <Text style={styles.link}>Amodei</Text>
       </Pressable>
     </View>
   );

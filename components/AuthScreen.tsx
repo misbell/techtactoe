@@ -191,6 +191,7 @@ export default function AuthScreen({ onSignIn }) {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title2}>TechTacToe</Text>
       <Text style={styles.title}>
         {isForgotPassword
           ? 'Reset Password'
@@ -353,6 +354,7 @@ export default function AuthScreen({ onSignIn }) {
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
   title: { fontSize: 20, marginBottom: 20 },
+  title2: { fontSize: 64, marginBottom: 20 },
   input: {
     width: '80%',
     padding: 10,

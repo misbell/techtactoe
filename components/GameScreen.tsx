@@ -8,15 +8,15 @@ import { listPlayers } from '../src/graphql/queries';
 
 const client = generateClient();
 
-const trumpImage = require('../assets/trump_headshot_1.jpeg');
-const xiImage = require('../assets/xi_communist_1.png');
-const putinImage = require('../assets/putin_headshot_1.png');
-const kimImage = require('../assets/kim_headshot_1.jpeg');
+const muskImage = require('../assets/musk.png');
+const Bezos = require('../assets/bezos.png');
+const Altman = require('../assets/altman.png');
+const Amodei = require('../assets/amodei.png');
 
 const opponentImages: any = {
-  Xi: xiImage,
-  Putin: putinImage,
-  Kim: kimImage,
+  Bezos,
+  Altman,
+  Amodei,
 };
 
 const GameScreen = ({ route, navigation }: any) => {
@@ -25,7 +25,7 @@ const GameScreen = ({ route, navigation }: any) => {
   
   const [game, setGame] = useState<any>(null); // Game object state
   const [board, setBoard] = useState(Array(9).fill(null));
-  const [currentPlayer, setCurrentPlayer] = useState('Trump');
+  const [currentPlayer, setCurrentPlayer] = useState('Musk');
   
   useEffect(() => {
     async function startGame() {
@@ -56,7 +56,7 @@ const GameScreen = ({ route, navigation }: any) => {
               player1: player1Id,
               player2: player2Id,
               board: Array(9).fill(""), // Initialize board with empty strings
-              currentPlayer: "Trump",
+              currentPlayer: "Musk",
             },
           },
         });
@@ -97,7 +97,7 @@ const GameScreen = ({ route, navigation }: any) => {
       Alert.alert('Game Over', `${winner} wins!`);
       updateWinner(winner); // Update the leaderboard
     } else {
-      setCurrentPlayer(currentPlayer === 'Trump' ? opponent : 'Trump');
+      setCurrentPlayer(currentPlayer === 'Musk' ? opponent : 'Musk');
     }
   };
 
@@ -125,7 +125,7 @@ const GameScreen = ({ route, navigation }: any) => {
   // const updateWinner = async (winner: string) => {
   //   try {
   //     // Fetch the winner's ID (from game or backend context)
-  //     const winnerId = winner === 'Trump' ? 'player1-id' : 'player2-id';
+  //     const winnerId = winner === 'Musk' ? 'player1-id' : 'player2-id';
 
   //     // Increment the winner's totalWins
   //     await client.graphql({
@@ -148,7 +148,7 @@ const GameScreen = ({ route, navigation }: any) => {
   const updateWinner = async (winner: string) => {
     try {
       // Determine winner ID (player1 or player2)
-      // const winnerId = winner === 'Trump' ? game.player1.id : game.player2.id;
+      // const winnerId = winner === 'Musk' ? game.player1.id : game.player2.id;
 
       // console.log("Updating winner with ID:", winner);
       // console.log("game is ", game);
@@ -188,7 +188,7 @@ const GameScreen = ({ route, navigation }: any) => {
     <Pressable key={index} style={styles.square} onPress={() => handlePress(index)}>
       {board[index] && (
         <Image
-          source={board[index] === 'Trump' ? trumpImage : opponentImages[opponent]}
+          source={board[index] === 'Musk' ? muskImage : opponentImages[opponent]}
           style={styles.roundImage}
         />
       )}
@@ -197,7 +197,8 @@ const GameScreen = ({ route, navigation }: any) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Trump Tac Toe</Text>
+      <Text>Opponent {opponent} </Text>
+      <Text style={styles.title}>Tech Tac Toe</Text>
       <View style={styles.board}>
         {Array(3)
           .fill(null)

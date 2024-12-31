@@ -20,6 +20,11 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 20,
   },
+  title2: {
+    fontSize: 64,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  }
   board: {
     width: 300,
     height: 300,
