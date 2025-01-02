@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-tictactoe-dev-99a3d-unauthRole",
       "StackName": "amplify-tictactoe-dev-99a3d",
       "StackId": "arn:aws:cloudformation:us-east-1:568299459466:stack/amplify-tictactoe-dev-99a3d/8380fd70-ba55-11ef-b780-1263c9eff61d",
-      "AmplifyAppId": "dq6aeal3aja1d"
+      "AmplifyAppId": "dq6aeal3aja1d",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-tictactoe-dev-99a3d-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "api": {
@@ -17,6 +18,20 @@
       },
       "auth": {
         "tictactoef388c448": {}
+      },
+      "function": {
+        "tictactoef388c448CreateAuthChallenge": {
+          "deploymentBucketName": "amplify-tictactoe-dev-99a3d-deployment",
+          "s3Key": "amplify-builds/tictactoef388c448CreateAuthChallenge-3068694e635768363643-build.zip"
+        },
+        "tictactoef388c448DefineAuthChallenge": {
+          "deploymentBucketName": "amplify-tictactoe-dev-99a3d-deployment",
+          "s3Key": "amplify-builds/tictactoef388c448DefineAuthChallenge-4e456a74304a75366e65-build.zip"
+        },
+        "tictactoef388c448VerifyAuthChallengeResponse": {
+          "deploymentBucketName": "amplify-tictactoe-dev-99a3d-deployment",
+          "s3Key": "amplify-builds/tictactoef388c448VerifyAuthChallengeResponse-4348344f316e5a467737-build.zip"
+        }
       }
     }
   }
