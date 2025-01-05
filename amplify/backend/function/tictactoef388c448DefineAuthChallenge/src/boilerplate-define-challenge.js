@@ -21,6 +21,16 @@ exports.handler = async (event) => {
   ) {
     event.response.issueTokens = true;
     event.response.failAuthentication = false;
+  } else if (event.request.challengeName === 'PASSKEY_CHALLENGE')  {
+    console.log('Handling passkey challenge...');
+    // Passkey-specific logic
+    if (event.request.session.length === 3 && event.request.session[2].challengeResult === true) {
+      event.response.issueTokens = true; // Tokens are issued on successful Passkey authentication
+      event.response.failAuthentication = false;
+    } else {
+      event.response.issueTokens = false;
+      event.response.failAuthentication = true; // Fail if Passkey validation fails
+    }
   } else {
     event.response.issueTokens = false;
     event.response.failAuthentication = true;

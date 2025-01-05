@@ -18,9 +18,9 @@
     "@react-native-community/netinfo": "^11.4.1",
     "@react-navigation/native": "^7.0.14",
     "@react-navigation/stack": "^7.1.0",
+    "@simplewebauthn/server": "^13.0.0",
     "aws-amplify": "^6.10.3",
     "expo": "^52.0.18",
-    "fido2-lib": "^3.5.3",
     "global": "^4.4.0",
     "react": "18.3.1",
     "react-native": "^0.76.5",
@@ -42,6 +42,7 @@
     "@react-native/eslint-config": "0.76.5",
     "@react-native/metro-config": "0.76.5",
     "@react-native/typescript-config": "0.76.5",
+    "@types/aws-lambda": "^8.10.147",
     "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.6.3",
@@ -54,5 +55,5 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "yarn@4.5.3"
+  "packageManager": "yarn@4.6.0"
 }
