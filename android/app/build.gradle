@@ -79,7 +79,7 @@ android {
 
     namespace "com.techtactoe"
     defaultConfig {
-        applicationId "com.techtactoe"
+        applicationId "com.prenezsoft.games.techtactoe"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

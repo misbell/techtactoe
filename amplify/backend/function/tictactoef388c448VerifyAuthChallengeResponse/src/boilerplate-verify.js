@@ -12,7 +12,7 @@ exports.handler = async (event) => {
       response: clientResponse,
       expectedChallenge,
       expectedOrigin: [
-        'android:apk-key-hash:<SHA256-key-hash>', // Replace with your Android hash
+        'android:apk-key-hash:85:BF:3E:DA:D5:D4:B3:26:57:60:91:BB:7B:CA:6D:39:8D:F8:59:5F:72:CE:C9:79:91:79:21:1E:36:5A:5B:AE',
         'ios:bundle-id:com.prenezsoft.games.techtactoe',  // Replace with your iOS bundle ID
       ],
       expectedRPID: rpID,
