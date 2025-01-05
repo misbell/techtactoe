@@ -77,9 +77,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.tictactoe"
+    namespace "com.techtactoe"
     defaultConfig {
-        applicationId "com.tictactoe"
+        applicationId "com.techtactoe"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -91,6 +91,13 @@ android {
             storePassword 'android'
             keyAlias 'androiddebugkey'
             keyPassword 'android'
+        }
+        release {
+            // stored in gradle.properties
+            storeFile file(MYAPP_STORE_FILE)
+            storePassword MYAPP_STORE_PASSWORD
+            keyAlias MYAPP_KEY_ALIAS
+            keyPassword MYAPP_KEY_PASSWORD
         }
     }
     buildTypes {
