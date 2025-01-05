@@ -1,0 +1,26 @@
+Alias name: techtactoekey
+Creation date: Jan 5, 2025
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Michael Isbell, OU=none, O=Prenezsoft, L=New York, ST=New York, C=US
+Issuer: CN=Michael Isbell, OU=none, O=Prenezsoft, L=New York, ST=New York, C=US
+Serial number: 6760edb4b653c1be
+Valid from: Sun Jan 05 11:05:44 EST 2025 until: Thu May 23 12:05:44 EDT 2052
+Certificate fingerprints:
+	 SHA1: 9F:82:C0:CC:CC:9D:79:B2:F4:05:0B:9A:7E:7D:AB:7D:C8:88:9F:F8
+	 SHA256: 85:BF:3E:DA:D5:D4:B3:26:57:60:91:BB:7B:CA:6D:39:8D:F8:59:5F:72:CE:C9:79:91:79:21:1E:36:5A:5B:AE
+Signature algorithm name: SHA384withRSA
+Subject Public Key Algorithm: 2048-bit RSA key
+Version: 3
+
+Extensions: 
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: 51 00 89 75 02 4A 6F 17   12 B6 9B 35 7A F9 9B AA  Q..u.Jo....5z...
+0010: AD 5A 80 8C                                        .Z..
+]
+]
+
