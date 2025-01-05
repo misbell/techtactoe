@@ -30,7 +30,7 @@
         },
         "tictactoef388c448VerifyAuthChallengeResponse": {
           "deploymentBucketName": "amplify-tictactoe-dev-99a3d-deployment",
-          "s3Key": "amplify-builds/tictactoef388c448VerifyAuthChallengeResponse-72686c557a76394f6b50-build.zip"
+          "s3Key": "amplify-builds/tictactoef388c448VerifyAuthChallengeResponse-724278764f586f485261-build.zip"
         }
       }
     }
