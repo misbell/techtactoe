@@ -15,6 +15,7 @@ export const createPlayer = /* GraphQL */ `mutation CreatePlayer(
   createPlayer(input: $input, condition: $condition) {
     id
     name
+    nickname
     totalWins
     createdAt
     updatedAt
@@ -32,6 +33,7 @@ export const updatePlayer = /* GraphQL */ `mutation UpdatePlayer(
   updatePlayer(input: $input, condition: $condition) {
     id
     name
+    nickname
     totalWins
     createdAt
     updatedAt
@@ -49,6 +51,7 @@ export const deletePlayer = /* GraphQL */ `mutation DeletePlayer(
   deletePlayer(input: $input, condition: $condition) {
     id
     name
+    nickname
     totalWins
     createdAt
     updatedAt
@@ -128,6 +131,7 @@ export const createMatchmakingQueue = /* GraphQL */ `mutation CreateMatchmakingQ
     player {
       id
       name
+      nickname
       totalWins
       createdAt
       updatedAt
@@ -151,6 +155,7 @@ export const updateMatchmakingQueue = /* GraphQL */ `mutation UpdateMatchmakingQ
     player {
       id
       name
+      nickname
       totalWins
       createdAt
       updatedAt
@@ -174,6 +179,7 @@ export const deleteMatchmakingQueue = /* GraphQL */ `mutation DeleteMatchmakingQ
     player {
       id
       name
+      nickname
       totalWins
       createdAt
       updatedAt

@@ -4,29 +4,35 @@ input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONL
 
 type Player @model {
   id: ID!
-  name: String!    # Email of the player
-  nickname: String # Optional user-defined nickname
-  totalWins: Int!  # Track the wins
+  name: String!
+  nickname: String
+  totalWins: Int!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
- 
 
 type Game @model {
   id: ID!
-  player1: ID! # Reference to the player's ID
-  player2: ID! # Reference to the player's ID
+  player1: ID!
+  player2: ID!
   board: [String!]!
   currentPlayer: String!
   winner: ID
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type MatchmakingQueue @model {
   id: ID!
   player: Player!
-  createdAt: AWSDateTime!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }
 
 type Leaderboard @model {
-  id: ID! # Player ID
+  id: ID!
   name: String!
   totalWins: Int!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
 }

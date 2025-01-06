@@ -12,6 +12,7 @@ export const getPlayer = /* GraphQL */ `query GetPlayer($id: ID!) {
   getPlayer(id: $id) {
     id
     name
+    nickname
     totalWins
     createdAt
     updatedAt
@@ -28,6 +29,7 @@ export const listPlayers = /* GraphQL */ `query ListPlayers(
     items {
       id
       name
+      nickname
       totalWins
       createdAt
       updatedAt
@@ -83,6 +85,7 @@ export const getMatchmakingQueue = /* GraphQL */ `query GetMatchmakingQueue($id:
     player {
       id
       name
+      nickname
       totalWins
       createdAt
       updatedAt

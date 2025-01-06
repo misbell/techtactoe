@@ -5,17 +5,21 @@
 export type CreatePlayerInput = {
   id?: string | null,
   name: string,
+  nickname?: string | null,
   totalWins: number,
+  createdAt?: string | null,
+  updatedAt?: string | null,
 };
 
 export type ModelPlayerConditionInput = {
   name?: ModelStringInput | null,
+  nickname?: ModelStringInput | null,
   totalWins?: ModelIntInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
   and?: Array< ModelPlayerConditionInput | null > | null,
   or?: Array< ModelPlayerConditionInput | null > | null,
   not?: ModelPlayerConditionInput | null,
-  createdAt?: ModelStringInput | null,
-  updatedAt?: ModelStringInput | null,
 };
 
 export type ModelStringInput = {
@@ -74,15 +78,19 @@ export type Player = {
   __typename: "Player",
   id: string,
   name: string,
+  nickname?: string | null,
   totalWins: number,
-  createdAt: string,
-  updatedAt: string,
+  createdAt?: string | null,
+  updatedAt?: string | null,
 };
 
 export type UpdatePlayerInput = {
   id: string,
   name?: string | null,
+  nickname?: string | null,
   totalWins?: number | null,
+  createdAt?: string | null,
+  updatedAt?: string | null,
 };
 
 export type DeletePlayerInput = {
@@ -96,6 +104,8 @@ export type CreateGameInput = {
   board: Array< string >,
   currentPlayer: string,
   winner?: string | null,
+  createdAt?: string | null,
+  updatedAt?: string | null,
 };
 
 export type ModelGameConditionInput = {
@@ -104,11 +114,11 @@ export type ModelGameConditionInput = {
   board?: ModelStringInput | null,
   currentPlayer?: ModelStringInput | null,
   winner?: ModelIDInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
   and?: Array< ModelGameConditionInput | null > | null,
   or?: Array< ModelGameConditionInput | null > | null,
   not?: ModelGameConditionInput | null,
-  createdAt?: ModelStringInput | null,
-  updatedAt?: ModelStringInput | null,
 };
 
 export type ModelIDInput = {
@@ -135,8 +145,8 @@ export type Game = {
   board: Array< string >,
   currentPlayer: string,
   winner?: string | null,
-  createdAt: string,
-  updatedAt: string,
+  createdAt?: string | null,
+  updatedAt?: string | null,
 };
 
 export type UpdateGameInput = {
@@ -146,6 +156,8 @@ export type UpdateGameInput = {
   board?: Array< string > | null,
   currentPlayer?: string | null,
   winner?: string | null,
+  createdAt?: string | null,
+  updatedAt?: string | null,
 };
 
 export type DeleteGameInput = {
@@ -155,27 +167,29 @@ export type DeleteGameInput = {
 export type CreateMatchmakingQueueInput = {
   id?: string | null,
   createdAt?: string | null,
+  updatedAt?: string | null,
 };
 
 export type ModelMatchmakingQueueConditionInput = {
   createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
   and?: Array< ModelMatchmakingQueueConditionInput | null > | null,
   or?: Array< ModelMatchmakingQueueConditionInput | null > | null,
   not?: ModelMatchmakingQueueConditionInput | null,
-  updatedAt?: ModelStringInput | null,
 };
 
 export type MatchmakingQueue = {
   __typename: "MatchmakingQueue",
   id: string,
   player: Player,
-  createdAt: string,
-  updatedAt: string,
+  createdAt?: string | null,
+  updatedAt?: string | null,
 };
 
 export type UpdateMatchmakingQueueInput = {
   id: string,
   createdAt?: string | null,
+  updatedAt?: string | null,
 };
 
 export type DeleteMatchmakingQueueInput = {
@@ -186,16 +200,18 @@ export type CreateLeaderboardInput = {
   id?: string | null,
   name: string,
   totalWins: number,
+  createdAt?: string | null,
+  updatedAt?: string | null,
 };
 
 export type ModelLeaderboardConditionInput = {
   name?: ModelStringInput | null,
   totalWins?: ModelIntInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
   and?: Array< ModelLeaderboardConditionInput | null > | null,
   or?: Array< ModelLeaderboardConditionInput | null > | null,
   not?: ModelLeaderboardConditionInput | null,
-  createdAt?: ModelStringInput | null,
-  updatedAt?: ModelStringInput | null,
 };
 
 export type Leaderboard = {
@@ -203,14 +219,16 @@ export type Leaderboard = {
   id: string,
   name: string,
   totalWins: number,
-  createdAt: string,
-  updatedAt: string,
+  createdAt?: string | null,
+  updatedAt?: string | null,
 };
 
 export type UpdateLeaderboardInput = {
   id: string,
   name?: string | null,
   totalWins?: number | null,
+  createdAt?: string | null,
+  updatedAt?: string | null,
 };
 
 export type DeleteLeaderboardInput = {
@@ -220,6 +238,7 @@ export type DeleteLeaderboardInput = {
 export type ModelPlayerFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
+  nickname?: ModelStringInput | null,
   totalWins?: ModelIntInput | null,
   createdAt?: ModelStringInput | null,
   updatedAt?: ModelStringInput | null,
@@ -289,6 +308,7 @@ export type ModelLeaderboardConnection = {
 export type ModelSubscriptionPlayerFilterInput = {
   id?: ModelSubscriptionIDInput | null,
   name?: ModelSubscriptionStringInput | null,
+  nickname?: ModelSubscriptionStringInput | null,
   totalWins?: ModelSubscriptionIntInput | null,
   createdAt?: ModelSubscriptionStringInput | null,
   updatedAt?: ModelSubscriptionStringInput | null,
@@ -379,9 +399,10 @@ export type CreatePlayerMutation = {
     __typename: "Player",
     id: string,
     name: string,
+    nickname?: string | null,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -395,9 +416,10 @@ export type UpdatePlayerMutation = {
     __typename: "Player",
     id: string,
     name: string,
+    nickname?: string | null,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -411,9 +433,10 @@ export type DeletePlayerMutation = {
     __typename: "Player",
     id: string,
     name: string,
+    nickname?: string | null,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -431,8 +454,8 @@ export type CreateGameMutation = {
     board: Array< string >,
     currentPlayer: string,
     winner?: string | null,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -450,8 +473,8 @@ export type UpdateGameMutation = {
     board: Array< string >,
     currentPlayer: string,
     winner?: string | null,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -469,8 +492,8 @@ export type DeleteGameMutation = {
     board: Array< string >,
     currentPlayer: string,
     winner?: string | null,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -487,12 +510,13 @@ export type CreateMatchmakingQueueMutation = {
       __typename: "Player",
       id: string,
       name: string,
+      nickname?: string | null,
       totalWins: number,
-      createdAt: string,
-      updatedAt: string,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     },
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -509,12 +533,13 @@ export type UpdateMatchmakingQueueMutation = {
       __typename: "Player",
       id: string,
       name: string,
+      nickname?: string | null,
       totalWins: number,
-      createdAt: string,
-      updatedAt: string,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     },
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -531,12 +556,13 @@ export type DeleteMatchmakingQueueMutation = {
       __typename: "Player",
       id: string,
       name: string,
+      nickname?: string | null,
       totalWins: number,
-      createdAt: string,
-      updatedAt: string,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     },
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -551,8 +577,8 @@ export type CreateLeaderboardMutation = {
     id: string,
     name: string,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -567,8 +593,8 @@ export type UpdateLeaderboardMutation = {
     id: string,
     name: string,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -583,8 +609,8 @@ export type DeleteLeaderboardMutation = {
     id: string,
     name: string,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -597,9 +623,10 @@ export type GetPlayerQuery = {
     __typename: "Player",
     id: string,
     name: string,
+    nickname?: string | null,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -616,9 +643,10 @@ export type ListPlayersQuery = {
       __typename: "Player",
       id: string,
       name: string,
+      nickname?: string | null,
       totalWins: number,
-      createdAt: string,
-      updatedAt: string,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     } | null >,
     nextToken?: string | null,
   } | null,
@@ -637,8 +665,8 @@ export type GetGameQuery = {
     board: Array< string >,
     currentPlayer: string,
     winner?: string | null,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -659,8 +687,8 @@ export type ListGamesQuery = {
       board: Array< string >,
       currentPlayer: string,
       winner?: string | null,
-      createdAt: string,
-      updatedAt: string,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     } | null >,
     nextToken?: string | null,
   } | null,
@@ -678,12 +706,13 @@ export type GetMatchmakingQueueQuery = {
       __typename: "Player",
       id: string,
       name: string,
+      nickname?: string | null,
       totalWins: number,
-      createdAt: string,
-      updatedAt: string,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     },
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -699,8 +728,8 @@ export type ListMatchmakingQueuesQuery = {
     items:  Array< {
       __typename: "MatchmakingQueue",
       id: string,
-      createdAt: string,
-      updatedAt: string,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     } | null >,
     nextToken?: string | null,
   } | null,
@@ -716,8 +745,8 @@ export type GetLeaderboardQuery = {
     id: string,
     name: string,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -735,8 +764,8 @@ export type ListLeaderboardsQuery = {
       id: string,
       name: string,
       totalWins: number,
-      createdAt: string,
-      updatedAt: string,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     } | null >,
     nextToken?: string | null,
   } | null,
@@ -751,9 +780,10 @@ export type OnCreatePlayerSubscription = {
     __typename: "Player",
     id: string,
     name: string,
+    nickname?: string | null,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -766,9 +796,10 @@ export type OnUpdatePlayerSubscription = {
     __typename: "Player",
     id: string,
     name: string,
+    nickname?: string | null,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -781,9 +812,10 @@ export type OnDeletePlayerSubscription = {
     __typename: "Player",
     id: string,
     name: string,
+    nickname?: string | null,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -800,8 +832,8 @@ export type OnCreateGameSubscription = {
     board: Array< string >,
     currentPlayer: string,
     winner?: string | null,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -818,8 +850,8 @@ export type OnUpdateGameSubscription = {
     board: Array< string >,
     currentPlayer: string,
     winner?: string | null,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -836,8 +868,8 @@ export type OnDeleteGameSubscription = {
     board: Array< string >,
     currentPlayer: string,
     winner?: string | null,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -853,12 +885,13 @@ export type OnCreateMatchmakingQueueSubscription = {
       __typename: "Player",
       id: string,
       name: string,
+      nickname?: string | null,
       totalWins: number,
-      createdAt: string,
-      updatedAt: string,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     },
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -874,12 +907,13 @@ export type OnUpdateMatchmakingQueueSubscription = {
       __typename: "Player",
       id: string,
       name: string,
+      nickname?: string | null,
       totalWins: number,
-      createdAt: string,
-      updatedAt: string,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     },
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -895,12 +929,13 @@ export type OnDeleteMatchmakingQueueSubscription = {
       __typename: "Player",
       id: string,
       name: string,
+      nickname?: string | null,
       totalWins: number,
-      createdAt: string,
-      updatedAt: string,
+      createdAt?: string | null,
+      updatedAt?: string | null,
     },
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -914,8 +949,8 @@ export type OnCreateLeaderboardSubscription = {
     id: string,
     name: string,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -929,8 +964,8 @@ export type OnUpdateLeaderboardSubscription = {
     id: string,
     name: string,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };
 
@@ -944,7 +979,7 @@ export type OnDeleteLeaderboardSubscription = {
     id: string,
     name: string,
     totalWins: number,
-    createdAt: string,
-    updatedAt: string,
+    createdAt?: string | null,
+    updatedAt?: string | null,
   } | null,
 };

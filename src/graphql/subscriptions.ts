@@ -12,6 +12,7 @@ export const onCreatePlayer = /* GraphQL */ `subscription OnCreatePlayer($filter
   onCreatePlayer(filter: $filter) {
     id
     name
+    nickname
     totalWins
     createdAt
     updatedAt
@@ -26,6 +27,7 @@ export const onUpdatePlayer = /* GraphQL */ `subscription OnUpdatePlayer($filter
   onUpdatePlayer(filter: $filter) {
     id
     name
+    nickname
     totalWins
     createdAt
     updatedAt
@@ -40,6 +42,7 @@ export const onDeletePlayer = /* GraphQL */ `subscription OnDeletePlayer($filter
   onDeletePlayer(filter: $filter) {
     id
     name
+    nickname
     totalWins
     createdAt
     updatedAt
@@ -109,6 +112,7 @@ export const onCreateMatchmakingQueue = /* GraphQL */ `subscription OnCreateMatc
     player {
       id
       name
+      nickname
       totalWins
       createdAt
       updatedAt
@@ -131,6 +135,7 @@ export const onUpdateMatchmakingQueue = /* GraphQL */ `subscription OnUpdateMatc
     player {
       id
       name
+      nickname
       totalWins
       createdAt
       updatedAt
@@ -153,6 +158,7 @@ export const onDeleteMatchmakingQueue = /* GraphQL */ `subscription OnDeleteMatc
     player {
       id
       name
+      nickname
       totalWins
       createdAt
       updatedAt
